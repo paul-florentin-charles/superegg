@@ -138,4 +138,64 @@ document.addEventListener('DOMContentLoaded', () => {
         const newTheme = e.matches ? 'dark' : 'light';
         setTheme(newTheme);
     });
+
+    // Email Collection Modal
+    const modal = document.getElementById('emailModal');
+    const sensibilisationBtn = document.getElementById('sensibilisationBtn');
+    const closeBtn = document.querySelector('.modal-close');
+    const emailForm = document.getElementById('emailForm');
+    const emailInput = document.getElementById('emailInput');
+    const emailError = document.getElementById('emailError');
+    const pdfPath = 'assets/pdfs/Catalogue-Offre-Super-Egg-du-14102024.pdf';
+
+    function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    function showModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hideModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        emailForm.reset();
+        emailError.textContent = '';
+    }
+
+    sensibilisationBtn?.addEventListener('click', showModal);
+    closeBtn?.addEventListener('click', hideModal);
+
+    modal?.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            hideModal();
+        }
+    });
+
+    emailForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput.value;
+
+        if (!validateEmail(email)) {
+            emailError.textContent = 'Veuillez entrer une adresse e-mail valide';
+            return;
+        }
+
+        // Here you could add code to save the email to your database if needed
+
+        // Open PDF in new tab
+        window.open(pdfPath, '_blank');
+        hideModal();
+    });
+
+    // Validate email on input
+    emailInput?.addEventListener('input', () => {
+        if (emailInput.value && !validateEmail(emailInput.value)) {
+            emailError.textContent = 'Veuillez entrer une adresse e-mail valide';
+        } else {
+            emailError.textContent = '';
+        }
+    });
 });

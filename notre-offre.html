@@ -43,6 +43,39 @@
             </div>
         </section>
 
+        <section class="cta-buttons">
+            <div class="container">
+                <div class="button-container">
+                    <a href="https://superegg.catalogueformpro.com/" class="cta-button formation" target="_blank" rel="noopener noreferrer">
+                        <span class="button-title">FORMATION</span>
+                        <span class="button-subtitle">(certifiées Qualiopi)</span>
+                    </a>
+                    <button class="cta-button sensibilisation" id="sensibilisationBtn">
+                        <span class="button-title">SENSIBILISATION</span>
+                        <span class="button-subtitle">(1h, 2h,3h)</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Collection Modal -->
+        <div class="modal" id="emailModal">
+            <div class="modal-content">
+                <button class="modal-close" aria-label="Fermer">&times;</button>
+                <h2>Accéder au catalogue</h2>
+                <p>Veuillez entrer votre adresse e-mail pour accéder au catalogue de sensibilisation.</p>
+                <form id="emailForm" class="email-form">
+                    <div class="form-group">
+                        <input type="email" id="emailInput" required 
+                               placeholder="Votre adresse e-mail"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+                    <button type="submit" class="btn-primary">Accéder au PDF</button>
+                </form>
+            </div>
+        </div>
+
         <section class="section">
             <div class="container">
                 <div class="offerings">
