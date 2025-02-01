@@ -132,8 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setTheme(newTheme);
     });
 
-    // Listen for system theme changes
-    prefersDarkScheme.addEventListener('change', (e) => {
+    // Theme handling
+    const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+    colorSchemeQueryList.addEventListener('change', (e) => {
         const newTheme = e.matches ? 'dark' : 'light';
         setTheme(newTheme);
     });
