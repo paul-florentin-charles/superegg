@@ -24,7 +24,7 @@
                     <li><a href="notre-offre.html">Notre offre</a></li>
                     <li><a href="references.html" class="active">Références</a></li>
                     <li><a href="about.html">Qui sommes-nous ?</a></li>
-                    <li><a href="/#contact" class="btn-primary">Contactez nous</a></li>
+                    <li><a href="#contact" class="btn-primary">Contactez-nous</a></li>
                 </ul>
                 <button class="theme-toggle" aria-label="Changer le thème">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -112,30 +112,58 @@
             <div class="container">
                 <h2>Rejoignez nos clients satisfaits</h2>
                 <p class="lead">Découvrez comment nous pouvons vous accompagner dans votre transformation.</p>
-                <a href="/#contact" class="btn-primary">Contactez-nous</a>
+                <a href="#contact" class="btn-primary">Contactez-nous</a>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Super Egg</h3>
-                    <p>Formations courtes et ludiques pour un futur durable.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="notre-offre.html">Notre offre</a></li>
-                        <li><a href="references.html">Références</a></li>
-                        <li><a href="about.html">Qui sommes-nous ?</a></li>
-                        <li><a href="/#contact">Contactez nous</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <section id="contact" class="footer-contact">
+            <div class="container">
+                <h2>Contactez-nous</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit">Envoyer</button>
+                    </div>
+                </form>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Super Egg. Tous droits réservés.</p>
+        </section>
+
+        <div class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <h3>Super Egg</h3>
+                        <p>Votre partenaire pour un avenir durable</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="notre-offre.html">Notre offre</a></li>
+                            <li><a href="references.html">Références</a></li>
+                            <li><a href="about.html">Qui sommes-nous ?</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Super Egg. Tous droits réservés.</p>
+                </div>
             </div>
         </div>
     </footer>
