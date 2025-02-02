@@ -933,6 +933,8 @@ body.menu-open {
     color: var(--text-color);
     transition: box-shadow 0.15s ease;
     border: 1px solid var(--darker-border);
+    position: relative;
+    padding-bottom: 3.5rem; /* Add space for the discover link */
 }
 
 .offering-card .image-container {
@@ -1033,6 +1035,29 @@ body.menu-open {
 [data-theme="dark"] .offering-card:hover {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
                 0 0 30px rgba(110, 207, 115, 0.1); /* Using primary color for subtle green glow */
+}
+
+/* Discover link styles */
+.discover-link {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.discover-link:hover {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    box-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.3);
+    transform: translateY(-2px);
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 html {
