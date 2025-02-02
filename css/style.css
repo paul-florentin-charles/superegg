@@ -922,63 +922,91 @@ body.menu-open {
 }
 
 /* Offering Cards with Images */
-.offering-card {
+.offerings {
     display: flex;
-    align-items: stretch;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.offering-card {
+    position: relative;
+    display: flex;
     background: var(--background-color);
     border-radius: var(--border-radius);
-    margin-bottom: 2rem;
     overflow: hidden;
-    text-decoration: none;
     color: var(--text-color);
     transition: box-shadow 0.15s ease;
     border: 1px solid var(--darker-border);
-    position: relative;
-    padding-bottom: 3.5rem; /* Add space for the discover link */
+    height: 200px;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.offering-card:hover {
+    text-decoration: none;
 }
 
 .offering-card .image-container {
-    flex: 0 0 auto;
-    width: 280px; /* Reduced from 320px */
+    flex: 0 0 40%;
     position: relative;
     overflow: hidden;
 }
 
-.offering-card img {
+.offering-card .image-container img {
     width: 100%;
-    height: 210px; /* Reduced from 240px (maintaining 4:3 ratio) */
+    height: 100%;
     object-fit: cover;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-@media (max-width: 768px) {
-    .offering-card {
-        flex-direction: column;
-    }
+.offering-card .offering-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
-    .offering-card .image-container {
-        width: 100%;
-    }
+.offering-card .offering-content h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
 
-    .offering-card img {
-        width: 100%;
-        height: 210px; /* Keeping consistent with desktop height */
-    }
+.offering-card .offering-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
 
-    .offering-content {
-        padding: 1.5rem;
-    }
+.discover-link {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(var(--primary-color-rgb), 0.1);
+    z-index: 1;
+}
 
-    .action-buttons {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
-    }
+.discover-link:hover {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    box-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.3);
+    transform: translateY(-2px);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
 
-    .action-button {
-        width: 100%;
-        text-align: center;
-    }
+.offering-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .offering-content {
@@ -1058,6 +1086,54 @@ body.menu-open {
     transform: translateY(-2px);
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .offering-card {
+        flex-direction: column;
+        height: auto;
+        min-height: 400px;
+    }
+
+    .offering-card .image-container {
+        flex: 0 0 200px;
+        width: 100%;
+    }
+
+    .offering-card .offering-content {
+        padding: 1.25rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .offering-card .offering-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .offering-card .offering-content p {
+        font-size: 0.9rem;
+    }
+
+    .discover-link {
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .offering-card {
+        min-height: 380px;
+    }
+
+    .offering-card .image-container {
+        flex: 0 0 180px;
+    }
+
+    .offering-card .offering-content {
+        padding: 1rem;
+        padding-bottom: 3.5rem;
+    }
 }
 
 html {
